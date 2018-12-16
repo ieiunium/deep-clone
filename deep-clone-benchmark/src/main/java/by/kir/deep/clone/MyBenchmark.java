@@ -61,4 +61,9 @@ public class MyBenchmark {
     public void jackson(Blackhole blackhole) {
         blackhole.consume(Cloners.cloneJackson(user));
     }
+
+    @Benchmark
+    public void reflection(Blackhole blackhole) {
+        blackhole.consume(Cloners.cloneCustomReflection(user));
+    }
 }

@@ -28,4 +28,9 @@ public class Cloners {
                 .readValue(objectMapper.writeValueAsString(src), User.class);
     }
 
+    public static User cloneCustomReflection(User src)
+    {
+        return ReflectionCloner.cloneObject(src);
+    }
+
 }
