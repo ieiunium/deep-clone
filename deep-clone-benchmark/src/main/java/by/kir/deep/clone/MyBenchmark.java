@@ -33,15 +33,14 @@ package by.kir.deep.clone;
 
 import by.kir.deep.clone.model.Address;
 import by.kir.deep.clone.model.User;
-import org.openjdk.jmh.annotations.Benchmark;
-import org.openjdk.jmh.annotations.Scope;
-import org.openjdk.jmh.annotations.State;
+import org.openjdk.jmh.annotations.*;
 import org.openjdk.jmh.infra.Blackhole;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 
 @State(Scope.Benchmark)
+@BenchmarkMode(Mode.All)
 public class MyBenchmark {
 
     private static User user = new User("123", "456",
@@ -65,5 +64,10 @@ public class MyBenchmark {
     @Benchmark
     public void reflection(Blackhole blackhole) {
         blackhole.consume(Cloners.cloneCustomReflection(user));
+    }
+
+    @Benchmark
+    public void vanila(Blackhole blackhole) {
+        blackhole.consume(Cloners.vanila(user));
     }
 }

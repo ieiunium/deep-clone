@@ -48,6 +48,11 @@ public class MainTest {
         assertUser(deepCopy);
     }
 
+    @Test
+    public void vanila() throws IOException {
+        User deepCopy = Cloners.vanila(user);
+        assertUser(deepCopy);
+    }
 
 
     private void assertUser(User deepCopy) {
@@ -60,5 +65,11 @@ public class MainTest {
         Assert.assertNotSame(user.getAddress().getLines().get(0), deepCopy.getAddress().getLines().get(0));
         Assert.assertNotSame(user.getAddress().getLines().get(1), deepCopy.getAddress().getLines().get(1));
         Assert.assertNotSame(user.getAddress().getLines().get(2), deepCopy.getAddress().getLines().get(2));
+        Assert.assertEquals(user.getFirstName(), deepCopy.getFirstName());
+        Assert.assertEquals(user.getLastName(), deepCopy.getLastName());
+        Assert.assertEquals(user.getAddress().getLines(), deepCopy.getAddress().getLines());
+        Assert.assertEquals(user.getAddress().getLines().get(0), deepCopy.getAddress().getLines().get(0));
+        Assert.assertEquals(user.getAddress().getLines().get(1), deepCopy.getAddress().getLines().get(1));
+        Assert.assertEquals(user.getAddress().getLines().get(2), deepCopy.getAddress().getLines().get(2));
     }
 }
