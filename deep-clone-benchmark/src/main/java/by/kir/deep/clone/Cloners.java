@@ -34,6 +34,10 @@ public class Cloners {
         return ReflectionCloner.cloneObject(src);
     }
 
+    public static User cloneCustomFastReflection(User src) {
+        return PojoCloner.cloneObject(src);
+    }
+
     public static User vanila(User user) {
         if (user == null) {
             return null;

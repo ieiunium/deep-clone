@@ -54,6 +54,12 @@ public class MainTest {
         assertUser(deepCopy);
     }
 
+    @Test
+    public void vanila1() throws IOException {
+
+    }
+
+
 
     private void assertUser(User deepCopy) {
         Assert.assertNotNull(deepCopy);
