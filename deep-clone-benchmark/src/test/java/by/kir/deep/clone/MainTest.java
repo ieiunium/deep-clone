@@ -56,9 +56,9 @@ public class MainTest {
 
     @Test
     public void vanila1() throws IOException {
-
+        User deepCopy = Cloners.cloneCustomFastReflection(user);
+        assertUser(deepCopy);
     }
-
 
 
     private void assertUser(User deepCopy) {
