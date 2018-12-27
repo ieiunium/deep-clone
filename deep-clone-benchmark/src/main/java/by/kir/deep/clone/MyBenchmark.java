@@ -70,4 +70,9 @@ public class MyBenchmark {
     public void vanila(Blackhole blackhole) {
         blackhole.consume(Cloners.vanila(user));
     }
+
+    @Benchmark
+    public void cglib(Blackhole blackhole) {
+        blackhole.consume(Cloners.cloneCustomFastReflection(user));
+    }
 }
