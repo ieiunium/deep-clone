@@ -40,7 +40,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 @State(Scope.Benchmark)
-@BenchmarkMode(Mode.All)
+@BenchmarkMode(Mode.Throughput)
 public class MyBenchmark {
 
     private static User user = new User("123", "456",
